@@ -11,6 +11,19 @@ body {
   font-weight: 100;
 }
 
+.voting-for-title::before {
+  display:  block;
+  content: 'voting on:';
+  font-size:  0.5em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.voting-for-title:empty::after {
+  content: 'Nothing to vote on';
+  color: #aaa;
+}
+
 .voting-for-name {
   background:  rgb(160, 210, 160);
 }
