@@ -10,6 +10,10 @@
   <body>
     <h1 id="voting-for-title" class="voting-for-title"></h1>
 
+    <form id="voting-for-setter" class="voting-for-setter">
+      <input type="text" id="voting-for-name" class="voting-for-name" placeholer="What are we voting for?">
+    </form>
+
     <menu id="card-picker" class="card-picker"></menu>
 
     <ul id="picked-cards" class="picked-cards"></ul>
@@ -19,9 +23,6 @@
     <button id="display-cards" class="display-cards">Display cards</button>
     <button id="reset-cards" class="reset-cards">Reset cards</button>
 
-    <form id="voting-for-setter" class="voting-for-setter">
-      <input type="text" id="voting-for-name" class="voting-for-name" placeholer="What are we voting for?">
-    </form>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="./js/main.js"></script>

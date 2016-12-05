@@ -34,12 +34,17 @@ resetCardsElt.addEventListener('click', e => {
   resetCardsElt.style.display   = 'none';
 });
 
+votingForNameElt.addEventListener('keydown', e => {
+  votingForNameElt.classList.add('voting-for-name--changed');
+});
+
 socket.on('initialise cards', ({ data, meta }) => {
   setVotingName(data.votingName);
   updatePickableCards(data.valueOptions);
 });
 
 socket.on('reset cards', () => {
+  votingForNameElt.classList.add('voting-for-name--changed');
   setCard();
 });
 
@@ -52,6 +57,7 @@ socket.on('set main user', ({ data, meta }) => {
   setMainUserElt.style.display = 'none';
   displayCardsElt.style.display = 'inline-block';
   votingForSetterElt.style.display = 'block';
+  votingForTitleElt.style.display = 'none';
   updatePicked(data.pickedValues);
   socket.on('new picked cards', ({ data, meta }) => {
     updatePicked(data.pickedValues);
@@ -64,6 +70,8 @@ socket.on('cannot set main user', mainUserID => {
 
 function setVotingName(newVotingName) {
   votingForTitleElt.innerHTML = newVotingName;
+  votingForNameElt.value = newVotingName;
+  votingForNameElt.classList.remove('voting-for-name--changed');
 }
 
 function updatePicked(values) {

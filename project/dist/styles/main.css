@@ -4,10 +4,19 @@ body {
   line-height: 1.5;
 }
 
+.voting-for-name,
 .voting-for-title {
   font-family: "Raleway", sans-serif;
   font-size: 50px;
   font-weight: 100;
+}
+
+.voting-for-name {
+  background:  rgb(160, 210, 160);
+}
+
+.voting-for-name--changed {
+  background:  rgb(210, 160, 160);
 }
 
 .card-picker {
