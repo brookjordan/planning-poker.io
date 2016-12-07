@@ -1,7 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #ddd;
   font-family: "Open Sans", sans-serif;
   line-height: 1.5;
+  margin: 5%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.voting-for-prefix {
+  font-size:  25px;
+  text-transform: uppercase;
+  color: #999;
+  font-weight: 100;
 }
 
 .voting-for-name,
@@ -9,14 +25,9 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 50px;
   font-weight: 100;
-}
-
-.voting-for-title::before {
-  display:  block;
-  content: 'voting on:';
-  font-size:  0.5em;
-  text-transform: uppercase;
-  color: #555;
+  width:  100%;
+  border: 0;
+  line-height:  1.3;
 }
 
 .voting-for-title:empty::after {
@@ -25,11 +36,21 @@ body {
 }
 
 .voting-for-name {
-  background:  rgb(160, 210, 160);
+  background-color:  rgba(0, 255, 0, 0.1);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+  border-radius: 3px;
+  transition-property: background-color, box-shadow;
+  transition-duration: 0.2s;
+  outline:  none;
+  padding:  10px;
 }
 
 .voting-for-name--changed {
-  background:  rgb(210, 160, 160);
+  background-color:  rgba(255, 0, 0, 0.1);
+}
+
+.voting-for-name:focus {
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.2);
 }
 
 .card-picker {
@@ -51,10 +72,15 @@ body {
   transition-property: box-shadow, transform, background-color;
 }
 
+.card-picker__card:hover,
+.card-picker__card--active {
+  background-color: #fff;
+}
+
 .card-picker__card--active {
   box-shadow: 0 5px 20px rgba(0,0,0,0.3);
   transform: translateY(-4px) scale(1);
-  background-color: #fff;
+  cursor: default;
 }
 
 .display-cards {
@@ -83,4 +109,31 @@ body {
 
 .voting-for-setter {
   display: none;
+}
+
+.control-menu {
+  display:  flex;
+  justify-content: space-around;
+  margin-top:  50px;
+}
+
+.display-cards,
+.reset-cards,
+.claim-main-user {
+  padding: 20px 30px;
+  background: #eee;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  transition-duration: 0.2s;
+  transition-property: background-color;
+}
+
+.display-cards:hover,
+.reset-cards:hover,
+.claim-main-user:hover {
+  background: #fff;
+}
+
+.claim-main-user {
+  display: block;
 }

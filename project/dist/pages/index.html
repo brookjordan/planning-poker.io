@@ -8,6 +8,7 @@
   </head>
 
   <body>
+    <p id="voting-for-prefix" class="voting-for-prefix">Voting on:</p>
     <h1 id="voting-for-title" class="voting-for-title"></h1>
 
     <form id="voting-for-setter" class="voting-for-setter">
@@ -18,10 +19,11 @@
 
     <ul id="picked-cards" class="picked-cards"></ul>
 
-    <button id="set-main-user" class="set-main-user">Set main user</button>
-
-    <button id="display-cards" class="display-cards">Display cards</button>
-    <button id="reset-cards" class="reset-cards">Reset cards</button>
+    <menu id="control-menu" class="control-menu">
+      <button id="claim-main-user" class="claim-main-user">Claim story master</button>
+      <button id="display-cards" class="display-cards">Display cards</button>
+      <button id="reset-cards" class="reset-cards">Reset cards</button>
+    </menu>
 
 
     <script src="/socket.io/socket.io.js"></script>
